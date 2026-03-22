@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -L https://mvplugins.org/core/developers/developer-api-starter/)",
+      "Bash(curl -s -L https://mvplugins.org/core/developers/api-usage/)",
+      "Bash(mv src/main/java/me/lluiscamino/multiversehardcore src/main/java/dev/hybes/)",
+      "Bash(mv src/test/java/me/lluiscamino/multiversehardcore src/test/java/dev/hybes/)",
+      "Bash(rm -rf src/main/java/me src/test/java/me)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL \"https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip\" -o /tmp/maven.zip)",
+      "Bash(curl -sL \"https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip\" -o /tmp/maven.zip)",
+      "Bash(unzip -q -o /tmp/maven.zip -d \"$HOME\")",
+      "Read(//c/Users/benhy/Dev/other/MultiverseHardcore/$HOME/apache-maven-3.9.9/bin/**)",
+      "Bash(export PATH=\"$HOME/apache-maven-3.9.9/bin:$PATH\")",
+      "Bash(mvn clean:*)",
+      "Bash(jar tf:*)",
+      "Bash(unzip -l \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\")",
+      "Bash(where javap:*)",
+      "Read(//c/Program Files/**)",
+      "Bash(\"/c/Program Files/Java/jdk-24/bin/javap\" -classpath \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\" org.mvplugins.multiverse.core.MultiverseCoreApi)",
+      "Bash(\"/c/Program Files/Java/jdk-24/bin/javap\" -classpath \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\" org.mvplugins.multiverse.core.world.WorldManager)",
+      "Bash(\"/c/Program Files/Java/jdk-24/bin/javap\" -classpath \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\" org.mvplugins.multiverse.core.world.MultiverseWorld)",
+      "Bash(\"/c/Program Files/Java/jdk-24/bin/javap\" -classpath \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\" org.mvplugins.multiverse.core.utils.result.Attempt)",
+      "Bash(\"/c/Program Files/Java/jdk-24/bin/javap\" -classpath \"$HOME/.m2/repository/org/mvplugins/multiverse/core/multiverse-core/5.0.0-SNAPSHOT/multiverse-core-5.0.0-SNAPSHOT.jar\" org.mvplugins.multiverse.core.world.options.DeleteWorldOptions)"
+    ]
+  }
+}

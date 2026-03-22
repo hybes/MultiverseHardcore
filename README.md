@@ -1,12 +1,10 @@
 # MultiverseHardcore
-[![Spigot version](https://img.shields.io/spiget/version/77749?label=version)](https://www.spigotmc.org/resources/multiversehardcore-temporary-and-permanent-death-bans.77749/)
-[![Plugin size](https://img.shields.io/spiget/download-size/77749)](https://www.spigotmc.org/resources/multiversehardcore-temporary-and-permanent-death-bans.77749/)
-[![Spigot average rating](https://img.shields.io/spiget/rating/77749)](https://www.spigotmc.org/resources/multiversehardcore-temporary-and-permanent-death-bans.77749/)
-[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/lluiscamino/MultiverseHardcore)](https://scrutinizer-ci.com/g/lluiscamino/MultiverseHardcore/)
-[![Open issues](https://img.shields.io/github/issues/lluiscamino/MultiverseHardcore)](https://github.com/lluiscamino/MultiverseHardcore/issues)
-[![license](https://img.shields.io/github/license/lluiscamino/MultiverseHardcore)](https://github.com/lluiscamino/MultiverseHardcore)
+[![Open issues](https://img.shields.io/github/issues/hybes/MultiverseHardcore)](https://github.com/hybes/MultiverseHardcore/issues)
+[![license](https://img.shields.io/github/license/hybes/MultiverseHardcore)](https://github.com/hybes/MultiverseHardcore)
 
-Minecraft Version: _1.16_
+Minecraft Version: _1.21.1_
+
+Requires: [Multiverse-Core 5.x](https://github.com/Multiverse/Multiverse-Core) and Java 21+
 
 With this plugin, you can prevent your players from entering a world if they die in it.
 
@@ -16,7 +14,7 @@ Deathbans only affect the worlds you choose and can be temporary or permanent.
 
 ## Installation
 
-1. Install [Multiverse-Core](https://github.com/Multiverse/Multiverse-Core) on your server.
+1. Install [Multiverse-Core 5.x](https://github.com/Multiverse/Multiverse-Core) on your server.
 2. Download the JAR file and put it on your Minecraft server ``plugins`` folder.
 3. Restart the server.
 

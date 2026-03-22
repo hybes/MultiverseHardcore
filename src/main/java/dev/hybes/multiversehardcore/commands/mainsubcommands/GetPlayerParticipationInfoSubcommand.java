@@ -1,0 +1,62 @@
+package dev.hybes.multiversehardcore.commands.mainsubcommands;
+
+import dev.hybes.multiversehardcore.commands.HelpCommand;
+import dev.hybes.multiversehardcore.commands.MainSubcommand;
+import dev.hybes.multiversehardcore.exceptions.InvalidCommandInputException;
+import dev.hybes.multiversehardcore.exceptions.PlayerNotParticipatedException;
+import dev.hybes.multiversehardcore.exceptions.WorldIsNotHardcoreException;
+import dev.hybes.multiversehardcore.models.PlayerParticipation;
+import dev.hybes.multiversehardcore.utils.MessageSender;
+import dev.hybes.multiversehardcore.utils.WorldUtils;
+import org.bukkit.World;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+public final class GetPlayerParticipationInfoSubcommand extends MainSubcommand {
+
+    private Player player;
+
+    @Override
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull String[] args) {
+        try {
+            initProperties(sender, args);
+            checkConsoleHasSpecifiedArgs();
+            World world = getCommandWorld();
+            player = getCommandPlayer();
+            checkPlayerExists(player);
+            checkSenderHasPermission();
+            PlayerParticipation participation = new PlayerParticipation(player, world);
+            sender.sendMessage(participation.toString());
+        } catch (PlayerNotParticipatedException | InvalidCommandInputException | WorldIsNotHardcoreException e) {
+            MessageSender.sendError(sender, e.getMessage());
+        }
+        return true;
+    }
+
+    @Override
+    protected String getRequiredPermission() {
+        return commandPlayerEqualsSender() ? "multiversehardcore.player.self" : "multiversehardcore.player.others";
+    }
+
+    private void checkConsoleHasSpecifiedArgs() throws InvalidCommandInputException {
+        if (args.length < 3 && !(sender instanceof Player)) {
+            throw new InvalidCommandInputException(getWrongUsageMessage(HelpCommand.PLAYER_COMMAND_OP));
+        }
+    }
+
+    protected World getCommandWorld() throws InvalidCommandInputException {
+        World world = args.length > 1 ? plugin.getServer().getWorld(args[1]) : ((Player) sender).getWorld();
+        checkWorldExists(world);
+        world = WorldUtils.getNormalWorld(world);
+        return world;
+    }
+
+    private Player getCommandPlayer() throws InvalidCommandInputException {
+        return args.length > 2 ? plugin.getServer().getPlayer(args[2]) : (Player) sender;
+    }
+
+    private boolean commandPlayerEqualsSender() {
+        return player.getName().equals(sender.getName());
+    }
+}
